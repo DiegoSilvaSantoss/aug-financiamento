@@ -209,6 +209,7 @@ body .main-calculadora .relative .sugestoes table {
   border: solid 1px;
   font-size: 12px;
   padding: 0.5rem;
+  cursor: pointer;
 }
 body .main-calculadora .relative .sugestoes table thead tr th {
   border: solid 1px;
@@ -264,6 +265,7 @@ body .main-calculadora .box-list #lista .item button {
   border-radius: 10px;
   border: none;
   font-weight: bold;
+  cursor: pointer;
   color: white;
 }
 body .main-calculadora .box-list #lista .item .btn-minus {
