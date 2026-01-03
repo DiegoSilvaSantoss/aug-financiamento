@@ -8,6 +8,7 @@ export default function uploadLateral() {
 
         uploadLateral.classList.toggle('active-lateral');
         fundoAtivo.classList.toggle('active-fundo');
+        btnLateral.classList.toggle('active-lateral');
 
     })
 
@@ -16,6 +17,7 @@ export default function uploadLateral() {
 
         uploadLateral.classList.remove('active-lateral');
         fundoAtivo.classList.remove('active-fundo');
+         btnLateral.classList.remove('active-lateral');
 
     })
 }
