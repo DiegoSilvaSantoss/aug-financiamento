@@ -306,6 +306,7 @@ body .box-configuracao {
   border-radius: 10px;
   padding: 1rem;
   transform: translateY(-1000px);
+  transition: 0.6s ease;
   color: white;
   border: solid 1px rgb(255, 255, 255);
   background: rgb(45, 45, 45);
