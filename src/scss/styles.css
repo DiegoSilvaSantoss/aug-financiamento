@@ -1,0 +1,222 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  overflow: hidden;
+  background: rgb(24, 24, 24);
+}
+body .topo {
+  width: 100%;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  background: red;
+  border-radius: 10px;
+}
+body .topo .title {
+  margin: 0 auto;
+  color: rgb(255, 255, 255);
+  text-transform: uppercase;
+}
+body .topo .btn-lateral {
+  position: fixed;
+}
+body .topo .btn-lateral #btn-lateral {
+  padding: 0.5rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+body .topo .btn-lateral #btn-lateral img {
+  width: 25px;
+}
+body .fundo {
+  position: fixed;
+  z-index: 2;
+  inset: 0;
+  opacity: 0;
+  display: none;
+  transition: 0.7s ease;
+  background: rgba(41, 41, 41, 0.626);
+}
+body .active-fundo {
+  opacity: 1;
+  display: block;
+}
+body .upload-lateral {
+  border: solid 2px;
+  background: rgb(38, 38, 38);
+  color: rgb(255, 255, 255);
+  border-radius: 10px;
+  padding: 0.4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  position: relative;
+  z-index: 3;
+  margin-top: 1.5rem;
+  transform: translateY(-1000px);
+  transition: 0.5s ease;
+}
+body .upload-lateral .box-import {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3rem;
+}
+body .upload-lateral .box-import .box-input1 {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+body .upload-lateral .box-import .box-input1 input[type=file]::file-selector-button {
+  background: rgb(239, 191, 0);
+  color: rgb(255, 255, 255);
+  padding: 0.8rem 2rem;
+  border-radius: 10px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+body .upload-lateral .box-import .box-input1 input[type=file]::file-selector-button:hover {
+  background: rgb(255, 206, 9);
+}
+body .upload-lateral .box-import .box-input1 label {
+  position: absolute;
+  top: -1.5rem;
+}
+body .upload-lateral .box-import .box-input1 img {
+  position: absolute;
+  left: 0.3rem;
+}
+body .upload-lateral .box-import .box-input2 {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+body .upload-lateral .box-import .box-input2 input[type=file]::file-selector-button {
+  background: rgb(27, 200, 0);
+  color: rgb(255, 255, 255);
+  padding: 0.8rem 2rem;
+  border-radius: 10px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+body .upload-lateral .box-import .box-input2 input[type=file]::file-selector-button:hover {
+  background: rgb(29, 220, 0);
+}
+body .upload-lateral .box-import .box-input2 label {
+  position: absolute;
+  top: -1.5rem;
+}
+body .upload-lateral .box-import .box-input2 img {
+  position: absolute;
+  left: 0.3rem;
+}
+body .upload-lateral .buttons {
+  display: flex;
+  gap: 3rem;
+}
+body .upload-lateral .buttons button {
+  padding: 0.9rem 2rem;
+  border-radius: 10px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  color: rgb(255, 255, 255);
+}
+body .upload-lateral .buttons button:nth-child(1) {
+  background: rgb(27, 200, 0);
+}
+body .upload-lateral .buttons button:nth-child(1):hover {
+  background: rgb(31, 231, 0);
+}
+body .upload-lateral .buttons button:nth-child(2) {
+  background: rgb(200, 0, 0);
+}
+body .upload-lateral .buttons button:nth-child(2):hover {
+  background: rgb(255, 0, 0);
+}
+body .active-lateral {
+  transform: translateX(0);
+}
+body .main-calculadora {
+  position: fixed;
+  z-index: 1;
+  top: 7rem;
+  color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+body .main-calculadora .relative {
+  width: 90vw;
+}
+body .main-calculadora .relative .box-input {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+body .main-calculadora .relative .box-input input {
+  width: 100%;
+  padding: 0.5rem 2rem;
+  max-width: 100%;
+  border-radius: 10px;
+  border: none;
+}
+body .main-calculadora .relative .box-input img {
+  position: absolute;
+  left: 0.3rem;
+  width: 26px;
+}
+body .main-calculadora .relative .sugestoes {
+  position: absolute;
+  top: 3rem;
+  z-index: 2;
+  width: 98%;
+  height: auto;
+  max-height: 450px;
+  display: none;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  border-radius: 10px;
+  background: rgb(0, 0, 0);
+}
+body .main-calculadora .relative .sugestoes table {
+  border: solid 1px;
+  font-size: 12px;
+  padding: 0.5rem;
+}
+body .main-calculadora .relative .sugestoes table thead tr th {
+  border: solid 1px;
+}
+body .main-calculadora .relative .sugestoes table #sugestoesBody {
+  border: solid 1px;
+  background-color: rgb(60, 60, 60);
+}
+body .main-calculadora .relative .sugestoes table #sugestoesBody tr {
+  border: solid 1px;
+}
+body .main-calculadora .flex {
+  display: none;
+}
+body .main-calculadora .box-entrada {
+  display: none;
+}
+body .main-calculadora .box-arrendondar {
+  display: none;
+}/*# sourceMappingURL=styles.css.map */
