@@ -1,4 +1,6 @@
 // carrinho.js
+import { fmt } from './util.js';
+
 export let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
 
 export function salvarCarrinho() {
@@ -11,7 +13,11 @@ export function adicionarCarrinho(produto) {
   if (produtoExistente) {
     produtoExistente.quantidade += 1;
   } else {
-    carrinho.push({ ...produto, quantidade: 1 });
+    carrinho.push({
+      ...produto,
+      quantidade: 1,
+      garantia: 0 // 0 = sem | 1 = 1 ano | 2 = 2 anos
+    });
   }
 
   salvarCarrinho();
@@ -25,30 +31,32 @@ export function removerCarrinho(index) {
 }
 
 export function limparCarrinho() {
-  carrinho.length = 0; // mantém a referência exportada
+  carrinho.length = 0;
   salvarCarrinho();
   render();
 }
 
-// Função que atualiza a lista de itens no DOM
+// ---------------- RENDER ----------------
+
 export function render() {
   const lista = document.getElementById('lista');
   const resultado = document.getElementById('resultado');
 
   if (!lista || !resultado) return;
 
-  // Mostra ou esconde a div resultado conforme o carrinho
-  if (carrinho.length > 0) {
-    resultado.style.display = 'block';
-  } else {
-    resultado.style.display = 'none';
-  }
-
+  resultado.style.display = carrinho.length > 0 ? 'block' : 'none';
   lista.innerHTML = '';
+
+  const garantias = JSON.parse(localStorage.getItem('garantias') || '[]');
 
   carrinho.forEach((p, index) => {
     const div = document.createElement('div');
     div.classList.add('item');
+
+    const g = garantias.find(k => k.nce === p.nce);
+
+    const valorG1 = g ? (g.g1 || 0) * p.quantidade : 0;
+    const valorG2 = g ? (g.g2 || 0) * p.quantidade : 0;
 
     div.innerHTML = `
       <div>
@@ -61,23 +69,35 @@ export function render() {
           <span>${p.quantidade}</span>
           <button class="btn-plus">+</button>
         </div>
+
+        <div class="garantia-item">
+          <label>Garantia:</label>
+          <select class="select-garantia">
+            <option value="0">Sem garantia</option>
+            <option value="1">GE 1 (${fmt(valorG1)})</option>
+            <option value="2">GE 2 (${fmt(valorG2)})</option>
+          </select>
+        </div>
       </div>
 
       <div>
         <strong>
-          ${(p.preco * p.quantidade).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}
-        </strong><br>
+          ${(p.preco * p.quantidade).toLocaleString('pt-BR', {
+            style: 'currency',
+            currency: 'BRL'
+          })}
+        </strong>
       </div>
     `;
 
-    // ➕ aumentar quantidade
+    // quantidade +
     div.querySelector('.btn-plus').addEventListener('click', () => {
       p.quantidade += 1;
       salvarCarrinho();
       render();
     });
 
-    // ➖ diminuir quantidade
+    // quantidade -
     div.querySelector('.btn-minus').addEventListener('click', () => {
       if (p.quantidade > 1) {
         p.quantidade -= 1;
@@ -88,14 +108,20 @@ export function render() {
       render();
     });
 
-    lista.appendChild(div);
-  });
+    // garantia por item
+    const selectGarantia = div.querySelector('.select-garantia');
+    selectGarantia.value = p.garantia;
 
-  // Atualiza garantias (apenas uma vez)
-  import('./garantias.js').then(module => {
-    module.atualizarGarantias(carrinho);
+    selectGarantia.addEventListener('change', e => {
+      p.garantia = Number(e.target.value);
+      salvarCarrinho();
+      render();
+    });
+
+    lista.appendChild(div);
   });
 }
 
-// Chama render uma vez ao carregar o módulo
+// render inicial
 render();
+

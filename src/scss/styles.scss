@@ -15,6 +15,7 @@ body {
     flex-direction: column;
     padding: 1rem;
     overflow: hidden;
+    position: relative;
     background: rgb(24, 24, 24);
 
     .topo {
@@ -26,6 +27,7 @@ body {
         border-radius: 10px;
         padding: 1rem;
         background: red;
+
 
         .title {
             text-transform: uppercase;
@@ -67,6 +69,23 @@ body {
         background: rgba(41, 41, 41, 0.626);
 
         &.active-fundo {
+            opacity: 1;
+            display: block;
+        }
+    }
+
+
+
+    .fundo-2 {
+        position: fixed;
+        z-index: 4;
+        inset: 0;
+        opacity: 0;
+        display: none;
+        transition: 0.7s ease;
+        background: rgba(41, 41, 41, 0.626);
+
+        &.active-fundo-2 {
             opacity: 1;
             display: block;
         }
@@ -217,6 +236,7 @@ body {
 
 
 
+
         .relative {
             //border: solid 1px red;
             width: 90vw;
@@ -301,7 +321,7 @@ body {
         .box-list {
             //border: solid 1px red;
             width: 100%;
-            height: 500px;
+            height: 440px;
             max-height: 510px;
             position: absolute;
             top: 6rem;
@@ -321,12 +341,16 @@ body {
                     gap: 0.5rem;
                     position: relative;
                     width: 100%;
-                    height: 120px;
+                    height: 140px;
                     max-height: 150px;
                     border-radius: 10px;
                     padding: 0.5rem;
                     border: solid 1px;
                     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+
+                    select {
+                        width: 40%;
+                    }
 
                     button {
                         position: absolute;
@@ -339,10 +363,12 @@ body {
                         cursor: pointer;
                         color: white;
                     }
-                    .btn-minus{
-                        right: 5rem;
+
+                    .btn-minus {
+                        right: 4rem;
                         background: radial-gradient(circle, rgb(132, 121, 0) 0%, rgb(255, 242, 0) 100%);
                     }
+
                     .btn-plus {
                         right: 1rem;
                         background: radial-gradient(circle, rgb(132, 0, 0) 0%, rgba(255, 0, 0, 1) 100%);
@@ -350,25 +376,213 @@ body {
                 }
             }
         }
+    }
 
 
 
 
+    .box-configuracao {
+        //border: solid 1px red;
+        width: 90%;
+        height: 550px;
+        max-height: 600px;
+        position: absolute;
+        z-index: 4;
+        top: 6rem;
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+        border-radius: 10px;
+        padding: 1rem;
+        transform: translateY(-1000px);
+        color: white;
+        border: solid 1px rgb(255, 255, 255);
+        background: rgb(45, 45, 45);
+        box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 
-
-        // DEPOIS ESTILIZAR.
         .flex {
-            display: none;
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+
+            .box {
+                display: flex;
+                flex-direction: column;
+
+                label {
+                    font-weight: bold;
+                }
+
+                select {
+                    width: 20%;
+                    padding: 0.3rem;
+                    font-weight: bold;
+                }
+            }
+
+            .box-btns {
+                //border: solid 1px red;
+                display: flex;
+                justify-content: center;
+                gap: 2rem;
+
+                button {
+                    padding: 0.5rem 2rem;
+                    border: none;
+                    font-weight: bold;
+                    border-radius: 10px;
+                    color: rgb(255, 255, 255);
+
+                    &:nth-child(1) {
+                        background: radial-gradient(circle, rgb(0, 178, 12) 0%, rgb(89, 255, 92) 100%);
+
+                        &:hover {
+                            background: rgb(26, 193, 0);
+                        }
+                    }
+
+                    &:nth-child(2) {
+                        background: radial-gradient(circle, rgb(132, 0, 0) 0%, rgba(255, 0, 0, 1) 100%);
+
+                        &:hover {
+                            background: rgb(231, 0, 0);
+                        }
+                    }
+                }
+            }
+        }
+
+
+        .taxa-financiamento {
+
+
+            .box {
+                display: flex;
+                flex-direction: column;
+
+                label {
+                    font-weight: bold;
+                }
+
+                input {
+                    width: 20%;
+                    padding: 0.3rem;
+                    font-weight: bold;
+                }
+            }
         }
 
         .box-entrada {
-            display: none;
+
+            .box {
+                display: flex;
+                flex-direction: column;
+
+                label {
+                    font-weight: bold;
+                }
+
+                input {
+                    width: 30%;
+                    padding: 0.3rem;
+                    font-weight: bold;
+                }
+            }
         }
 
         .box-arrendondar {
-            display: none;
+            //border: solid 1px red;
+            display: flex;
+            ;
+            align-items: center;
+            gap: 1rem;
+
+            .round-box {
+
+                input[type='checkbox'] {
+                    accent-color: rgb(255, 238, 0);
+                }
+            }
         }
 
+        &.active-config-lateral {
+            transform: translateX(0);
+        }
+
+
+
+        .result {
+            border: solid 1px rgb(255, 255, 255);
+            padding: 0.3rem;
+        }
+
+    }
+
+
+
+    .box-btn {
+        //border: solid 1px red;
+        width: 90%;
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        bottom: 6rem;
+        margin: 0 auto;
+
+        .btn-financiamento {
+            padding: 1rem 4rem;
+            border-radius: 10px;
+            border: none;
+            font-size: 20px;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            color: #ffffff;
+            background: radial-gradient(circle, rgb(0, 147, 10) 0%, rgb(27, 255, 31) 100%);
+
+            &:hover {
+                background: rgb(0, 217, 0);
+            }
+        }
+
+        &.active-btn-finance {
+            display: none;
+        }
+    }
+
+
+
+    .box-btn-prev {
+        //border: solid 1px red;
+        width: 90%;
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        z-index: 4;
+        bottom: 5rem;
+        display: none;
+
+        .btn-prev {
+            padding: 1rem 4rem;
+            border-radius: 10px;
+            border: none;
+            font-size: 20px;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            color: #ffffff;
+            background: radial-gradient(circle, rgb(10, 0, 147) 0%, rgb(0, 5, 148) 100%);
+
+            &:hover {
+                background: rgb(0, 4, 216);
+            }
+        }
+
+        &.active-prev {
+            display: block;
+            display: flex;
+            justify-content: center;
+        }
     }
 }
 
