@@ -19,7 +19,7 @@ body {
     background: rgb(188, 188, 188);
 
     .topo {
-        width: 100%;
+        width: 83%;
         height: 3rem;
         display: flex;
         align-items: center;
@@ -40,6 +40,8 @@ body {
             position: fixed;
             right: 1.5rem;
             z-index: 3;
+            border-radius: 10px;
+            background: rgb(218, 0, 0);
 
             #btn-lateral {
                 padding: 0.5rem;
