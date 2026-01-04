@@ -366,8 +366,17 @@ body {
                     }
 
                     .garantia-item {
+                        //border: solid 1px red;
+                        width: 80%;
                         position: absolute;
                         top: 3.8rem;
+
+                        .select-garantia {
+                            width: 50%;
+                            border-radius: 5px;
+                            color: #ffffff;
+                            background-color: #222222;
+                        }
                     }
 
                     .box-quantidade {
@@ -378,10 +387,6 @@ body {
                         display: flex;
                         flex-direction: column;
                         gap: 0.5rem;
-
-                        .select-garantia {
-                            width: 50%;
-                        }
                     }
 
                     button {

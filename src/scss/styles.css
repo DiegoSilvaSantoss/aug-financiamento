@@ -290,8 +290,15 @@ body .main-calculadora .box-list #lista .item .valor-total {
   color: rgb(0, 190, 0);
 }
 body .main-calculadora .box-list #lista .item .garantia-item {
+  width: 80%;
   position: absolute;
   top: 3.8rem;
+}
+body .main-calculadora .box-list #lista .item .garantia-item .select-garantia {
+  width: 50%;
+  border-radius: 5px;
+  color: #ffffff;
+  background-color: #222222;
 }
 body .main-calculadora .box-list #lista .item .box-quantidade {
   position: absolute;
@@ -300,9 +307,6 @@ body .main-calculadora .box-list #lista .item .box-quantidade {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-}
-body .main-calculadora .box-list #lista .item .box-quantidade .select-garantia {
-  width: 50%;
 }
 body .main-calculadora .box-list #lista .item button {
   right: 1rem;
