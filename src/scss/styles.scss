@@ -360,7 +360,24 @@ body {
                     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 
                     .valor-total {
+                        position: absolute;
+                        top: 6rem;
                         color: rgb(0, 190, 0);
+                    }
+
+                    .garantia-item {
+                        position: absolute;
+                        top: 3.8rem;
+                    }
+
+                    .box-quantidade {
+                        //border: solid 1px red;
+                        position: absolute;
+                        right: 1rem;
+                        top: 4.4rem;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 0.5rem;
                     }
 
                     select {
@@ -368,7 +385,6 @@ body {
                     }
 
                     button {
-                        position: absolute;
                         right: 1rem;
                         top: 4rem;
                         padding: 0.3rem 1rem;

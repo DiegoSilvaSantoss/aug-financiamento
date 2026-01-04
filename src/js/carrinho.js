@@ -63,11 +63,16 @@ export function render() {
         <strong>${p.nce}</strong>
         <small>${p.descricao}</small>
 
+        <div class="box-quantidade">
         <div class="quantidade">
           Quantidade:
-          <button class="btn-minus">−</button>
           <span>${p.quantidade}</span>
+        </div>
+
+        <div>
+          <button class="btn-minus">−</button>
           <button class="btn-plus">+</button>
+        </div>
         </div>
 
         <div class="garantia-item">
@@ -83,9 +88,9 @@ export function render() {
       <div>
         <strong class="valor-total">
           ${(p.preco * p.quantidade).toLocaleString('pt-BR', {
-            style: 'currency',
-            currency: 'BRL'
-          })}
+      style: 'currency',
+      currency: 'BRL'
+    })}
         </strong>
       </div>
     `;
