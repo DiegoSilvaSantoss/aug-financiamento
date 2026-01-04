@@ -457,6 +457,8 @@ body {
                     font-size: 18px;
                     border: none;
                     border-radius: 5px;
+                    color: #cbb400;
+                    background-color: #222222;
                 }
             }
 
@@ -467,7 +469,7 @@ body {
                 gap: 2rem;
 
                 button {
-                    padding: 0.5rem 2rem;
+                    padding: 0.9rem 2rem;
                     border: none;
                     font-weight: bold;
                     border-radius: 10px;
@@ -511,6 +513,8 @@ body {
                     font-size: 18px;
                     border-radius: 5px;
                     border: none;
+                    color: #cbb400;
+                    background-color: #222222;
                 }
             }
         }
@@ -531,7 +535,9 @@ body {
                     font-weight: bold;
                     font-size: 18px;
                     border-radius: 5px;
-                    border: none;
+                    border: solid 1px rgb(255, 255, 255);
+                    color: #28b700;
+                    background-color: #222222;
                 }
             }
         }
@@ -546,7 +552,7 @@ body {
             .round-box {
 
                 input[type='checkbox'] {
-                    accent-color: rgb(255, 238, 0);
+                    accent-color: rgb(0, 145, 10);
                 }
             }
         }
@@ -558,8 +564,18 @@ body {
 
 
         .result {
-            border: solid 1px rgb(255, 255, 255);
+            position: absolute;
+            bottom: 1rem;
             padding: 0.3rem;
+            border-radius: 15px;
+            border: solid 1px rgb(255, 255, 255);
+
+            p {
+                
+                span {
+                    color: #28b700;
+                }
+            }
         }
 
     }

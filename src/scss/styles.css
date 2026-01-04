@@ -364,6 +364,8 @@ body .box-configuracao .flex .box select {
   font-size: 18px;
   border: none;
   border-radius: 5px;
+  color: #cbb400;
+  background-color: #222222;
 }
 body .box-configuracao .flex .box-btns {
   display: flex;
@@ -371,7 +373,7 @@ body .box-configuracao .flex .box-btns {
   gap: 2rem;
 }
 body .box-configuracao .flex .box-btns button {
-  padding: 0.5rem 2rem;
+  padding: 0.9rem 2rem;
   border: none;
   font-weight: bold;
   border-radius: 10px;
@@ -403,6 +405,8 @@ body .box-configuracao .taxa-financiamento .box input {
   font-size: 18px;
   border-radius: 5px;
   border: none;
+  color: #cbb400;
+  background-color: #222222;
 }
 body .box-configuracao .box-entrada .box {
   display: flex;
@@ -417,7 +421,9 @@ body .box-configuracao .box-entrada .box input {
   font-weight: bold;
   font-size: 18px;
   border-radius: 5px;
-  border: none;
+  border: solid 1px rgb(255, 255, 255);
+  color: #28b700;
+  background-color: #222222;
 }
 body .box-configuracao .box-arrendondar {
   display: flex;
@@ -425,14 +431,20 @@ body .box-configuracao .box-arrendondar {
   gap: 1rem;
 }
 body .box-configuracao .box-arrendondar .round-box input[type=checkbox] {
-  accent-color: rgb(255, 238, 0);
+  accent-color: rgb(0, 145, 10);
 }
 body .box-configuracao.active-config-lateral {
   transform: translateX(0);
 }
 body .box-configuracao .result {
-  border: solid 1px rgb(255, 255, 255);
+  position: absolute;
+  bottom: 1rem;
   padding: 0.3rem;
+  border-radius: 15px;
+  border: solid 1px rgb(255, 255, 255);
+}
+body .box-configuracao .result p span {
+  color: #28b700;
 }
 body .box-btn {
   width: 90%;
