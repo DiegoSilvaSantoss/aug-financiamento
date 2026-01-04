@@ -201,6 +201,7 @@ body .main-calculadora .relative .box-input input {
   max-width: 100%;
   border-radius: 10px;
   border: none;
+  color: #ffffff;
   background-color: #232323;
 }
 body .main-calculadora .relative .box-input input::-moz-placeholder {
