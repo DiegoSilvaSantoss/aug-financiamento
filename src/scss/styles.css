@@ -257,6 +257,9 @@ body .main-calculadora .relative .sugestoes table #sugestoesBody tr td:last-chil
   border-top-right-radius: 12px;
   border-bottom-right-radius: 12px;
 }
+body .main-calculadora .relative .sugestoes table #sugestoesBody tr td span {
+  color: #28b700;
+}
 body .main-calculadora .box-title {
   width: 100%;
   text-align: center;

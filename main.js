@@ -96,7 +96,7 @@ busca.addEventListener('input', () => {
       tr.innerHTML = `
         <td>${p.nce}</td>
         <td>${p.descricao}</td>
-        <td>${p.preco.toLocaleString('pt-BR',{style:'currency',currency:'BRL'})}</td>
+        <td><span>${p.preco.toLocaleString('pt-BR',{style:'currency',currency:'BRL'})}</span></td>
       `;
 
       tr.addEventListener('click', () => {
