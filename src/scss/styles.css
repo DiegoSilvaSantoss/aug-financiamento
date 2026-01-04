@@ -284,6 +284,9 @@ body .main-calculadora .box-list #lista .item {
   background: #222222;
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
+body .main-calculadora .box-list #lista .item .valor-total {
+  color: rgb(0, 190, 0);
+}
 body .main-calculadora .box-list #lista .item select {
   width: 40%;
 }

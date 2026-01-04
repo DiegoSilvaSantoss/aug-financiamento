@@ -81,7 +81,7 @@ export function render() {
       </div>
 
       <div>
-        <strong>
+        <strong class="valor-total">
           ${(p.preco * p.quantidade).toLocaleString('pt-BR', {
             style: 'currency',
             currency: 'BRL'
