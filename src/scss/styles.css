@@ -316,11 +316,11 @@ body .main-calculadora .box-list #lista .item button {
 }
 body .main-calculadora .box-list #lista .item .btn-minus {
   right: 4rem;
-  background: radial-gradient(circle, rgb(132, 121, 0) 0%, rgb(255, 242, 0) 100%);
+  background: radial-gradient(circle, rgb(132, 0, 0) 0%, rgb(255, 0, 0) 100%);
 }
 body .main-calculadora .box-list #lista .item .btn-plus {
   right: 1rem;
-  background: radial-gradient(circle, rgb(132, 0, 0) 0%, rgb(255, 0, 0) 100%);
+  background: radial-gradient(circle, rgb(132, 121, 0) 0%, rgb(255, 242, 0) 100%);
 }
 body .box-configuracao {
   width: 90%;
