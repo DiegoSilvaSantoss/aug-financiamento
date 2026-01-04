@@ -301,8 +301,8 @@ body .main-calculadora .box-list #lista .item .box-quantidade {
   flex-direction: column;
   gap: 0.5rem;
 }
-body .main-calculadora .box-list #lista .item select {
-  width: 40%;
+body .main-calculadora .box-list #lista .item .box-quantidade .select-garantia {
+  width: 50%;
 }
 body .main-calculadora .box-list #lista .item button {
   right: 1rem;
