@@ -233,18 +233,29 @@ body .main-calculadora .relative .sugestoes {
 body .main-calculadora .relative .sugestoes table {
   border: solid 1px;
   font-size: 12px;
-  padding: 0.5rem;
+  padding: 0.8rem;
   cursor: pointer;
+  border-collapse: separate;
+  border-spacing: 0 20px;
 }
 body .main-calculadora .relative .sugestoes table thead tr th {
+  padding: 10px;
   border: solid 1px;
 }
 body .main-calculadora .relative .sugestoes table #sugestoesBody {
-  border: solid 1px;
   background-color: rgb(60, 60, 60);
 }
-body .main-calculadora .relative .sugestoes table #sugestoesBody tr {
-  border: solid 1px;
+body .main-calculadora .relative .sugestoes table #sugestoesBody tr td {
+  margin-top: 10px;
+  padding: 6px;
+}
+body .main-calculadora .relative .sugestoes table #sugestoesBody tr td:first-child {
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+body .main-calculadora .relative .sugestoes table #sugestoesBody tr td:last-child {
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
 }
 body .main-calculadora .box-title {
   width: 100%;
