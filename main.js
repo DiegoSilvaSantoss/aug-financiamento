@@ -18,7 +18,7 @@ const resultado = document.getElementById('resultado');
 // ================= BASE =================
 
 document.getElementById('btnSalvar').addEventListener('click', () => {
-  carregarBase(fileProdutos.files[0], fileGarantias.files[0], (len) => {
+  carregarBase(fileProdutos.files[0], fileGarantias.files[0], len => {
     msg.innerText = `✔ Base carregada (${len} produtos)`;
   });
 });
@@ -43,31 +43,34 @@ document.getElementById('btnCalcular').addEventListener('click', () => {
     return;
   }
 
-  const parcelasVal = parcelas.value;
-  const taxaVal = taxa.value;
-  const arred = arredondar.checked;
+  const resultadoCalculo = calcularTotal(
+    entrada.value,
+    parcelas.value,
+    taxa.value,
+    arredondar.checked
+  );
 
   const {
     total,
     financiado,
     entrada: entVal,
     valorParcela,
-    parcelas: qtdParcelas
-  } = calcularTotal(
-    entrada.value,
-    parcelasVal,
-    taxaVal,
-    arred
-  );
+    parcelas: qtdParcelas,
+    totalComJuros,
+    jurosAplicado
+  } = resultadoCalculo;
 
   resultado.style.display = 'block';
   resultado.innerHTML = `
-    <p><strong>Total:</strong> <span>${total.toLocaleString('pt-BR',{style:'currency',currency:'BRL'})}</span></p>
-    <p><strong>Entrada:</strong> <span>${entVal.toLocaleString('pt-BR',{style:'currency',currency:'BRL'})}</span></p>
-    <p><strong>Valor financiado:</strong> <span>${financiado.toLocaleString('pt-BR',{style:'currency',currency:'BRL'})}</span></p>
-    <p><strong>Parcelas:</strong> <span>${qtdParcelas}x de ${valorParcela.toLocaleString('pt-BR',{style:'currency',currency:'BRL'})}</span></p>
+    <p><strong>Total:</strong> <span>${total.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}<span></p>
+    <p><strong>Entrada:</strong> <span>${entVal.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</span></p>
+    <p><strong>Valor financiado:</strong> <span>${financiado.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</span></p>
+    <p><strong>Parcelas:</strong> <span>${qtdParcelas}x de ${valorParcela.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</span></p>
+    <p><strong>Total com juros:</strong> <span>${totalComJuros.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</span></p>
+    <p><strong>Juros aplicado:</strong> <span>${jurosAplicado.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</span></p>
   `;
 });
+
 
 // ================= BUSCA =================
 
@@ -96,14 +99,14 @@ busca.addEventListener('input', () => {
       tr.innerHTML = `
         <td>${p.nce}</td>
         <td>${p.descricao}</td>
-        <td><span>${p.preco.toLocaleString('pt-BR',{style:'currency',currency:'BRL'})}</span></td>
+        <td>${p.preco.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</td>
       `;
 
-      tr.addEventListener('click', () => {
+      tr.onclick = () => {
         adicionarCarrinho(p);
         busca.value = '';
         sugestoes.style.display = 'none';
-      });
+      };
 
       sugestoesBody.appendChild(tr);
     });
@@ -127,7 +130,7 @@ entrada.addEventListener('input', () => {
   });
 });
 
-// ================= UPLOAD LATERAL =================
+// ================= LATERAIS =================
 
 uploadLateral();
 financeiraLateral();

@@ -1,4 +1,3 @@
-// carrinho.js
 import { fmt } from './util.js';
 
 export let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
@@ -16,16 +15,10 @@ export function adicionarCarrinho(produto) {
     carrinho.push({
       ...produto,
       quantidade: 1,
-      garantia: 0 // 0 = sem | 1 = 1 ano | 2 = 2 anos
+      garantia: 0
     });
   }
 
-  salvarCarrinho();
-  render();
-}
-
-export function removerCarrinho(index) {
-  carrinho.splice(index, 1);
   salvarCarrinho();
   render();
 }
@@ -36,15 +29,13 @@ export function limparCarrinho() {
   render();
 }
 
-// ---------------- RENDER ----------------
-
 export function render() {
   const lista = document.getElementById('lista');
   const resultado = document.getElementById('resultado');
 
   if (!lista || !resultado) return;
 
-  resultado.style.display = carrinho.length > 0 ? 'block' : 'none';
+  resultado.style.display = carrinho.length ? 'block' : 'none';
   lista.innerHTML = '';
 
   const garantias = JSON.parse(localStorage.getItem('garantias') || '[]');
@@ -54,7 +45,6 @@ export function render() {
     div.classList.add('item');
 
     const g = garantias.find(k => k.nce === p.nce);
-
     const valorG1 = g ? (g.g1 || 0) * p.quantidade : 0;
     const valorG2 = g ? (g.g2 || 0) * p.quantidade : 0;
 
@@ -64,15 +54,13 @@ export function render() {
         <small>${p.descricao}</small>
 
         <div class="box-quantidade">
-        <div class="quantidade">
-          Quantidade:
-          <span>${p.quantidade}</span>
-        </div>
-
-        <div>
-          <button class="btn-minus">−</button>
-          <button class="btn-plus">+</button>
-        </div>
+          <div class="quantidade">
+            Quantidade: <span>${p.quantidade}</span>
+          </div>
+          <div>
+            <button class="btn-minus">−</button>
+            <button class="btn-plus">+</button>
+          </div>
         </div>
 
         <div class="garantia-item">
@@ -88,45 +76,48 @@ export function render() {
       <div>
         <strong class="valor-total">
           ${(p.preco * p.quantidade).toLocaleString('pt-BR', {
-      style: 'currency',
-      currency: 'BRL'
-    })}
+            style: 'currency',
+            currency: 'BRL'
+          })}
         </strong>
       </div>
     `;
 
-    // quantidade +
-    div.querySelector('.btn-plus').addEventListener('click', () => {
-      p.quantidade += 1;
+    div.querySelector('.btn-plus').onclick = () => {
+      p.quantidade++;
       salvarCarrinho();
       render();
-    });
+    };
 
-    // quantidade -
-    div.querySelector('.btn-minus').addEventListener('click', () => {
-      if (p.quantidade > 1) {
-        p.quantidade -= 1;
-      } else {
-        carrinho.splice(index, 1);
-      }
+    div.querySelector('.btn-minus').onclick = () => {
+      if (p.quantidade > 1) p.quantidade--;
+      else carrinho.splice(index, 1);
       salvarCarrinho();
       render();
-    });
+    };
 
-    // garantia por item
-    const selectGarantia = div.querySelector('.select-garantia');
-    selectGarantia.value = p.garantia;
-
-    selectGarantia.addEventListener('change', e => {
+    const select = div.querySelector('.select-garantia');
+    select.value = p.garantia;
+    select.onchange = e => {
       p.garantia = Number(e.target.value);
       salvarCarrinho();
       render();
-    });
+    };
 
+    // 🔥 BOTÃO APAGAR (ADIÇÃO)
+    const btnApagar = document.createElement('button');
+    btnApagar.textContent = 'Apagar';
+    btnApagar.className = 'btn-apagar';
+    btnApagar.innerHTML = '<img src="./src/img/recycle-bin.png" alt="Imagem logo lixeira">'
+    btnApagar.onclick = () => {
+      carrinho = carrinho.filter(item => item.nce !== p.nce);
+      salvarCarrinho();
+      render();
+    };
+
+    div.appendChild(btnApagar);
     lista.appendChild(div);
   });
 }
 
-// render inicial
 render();
-

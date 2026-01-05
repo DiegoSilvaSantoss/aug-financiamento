@@ -424,12 +424,24 @@ body {
 
                     .btn-minus {
                         right: 4rem;
-                        background: radial-gradient(circle, rgb(132, 0, 0) 0%, rgba(255, 0, 0, 1) 100%);
+                        background: radial-gradient(circle, rgb(132, 121, 0) 0%, rgb(255, 242, 0) 100%);
                     }
 
                     .btn-plus {
                         right: 1rem;
-                        background: radial-gradient(circle, rgb(132, 121, 0) 0%, rgb(255, 242, 0) 100%);
+                        background: radial-gradient(circle, rgb(0, 132, 2) 0%, rgb(0, 255, 34) 100%);
+                    }
+
+                    .btn-apagar {
+                        position: absolute;
+                        top: 6rem;
+                        right: 8rem;
+                        width: 70px;
+                        background: radial-gradient(circle, rgb(132, 0, 0) 0%, rgba(255, 0, 0, 1) 100%);
+
+                        img {
+                            width: 20px;
+                        }
                     }
                 }
             }
