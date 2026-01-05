@@ -33,7 +33,7 @@ export function calcularTotal(entradaStr, parcelas, taxa, arredondar) {
   if (arredondar) valorParcela = Math.round(valorParcela * 100) / 100;
 
   const totalComJuros = valorParcela * n;
-  const jurosAplicado = totalComJuros - financiado; // 🔥 juros que está sendo aplicado
+  const jurosAplicado = totalComJuros - financiado; //juros que está sendo aplicado
 
   return {
     total,             // mantém o total
@@ -42,6 +42,6 @@ export function calcularTotal(entradaStr, parcelas, taxa, arredondar) {
     valorParcela,
     parcelas: n,
     totalComJuros,
-    jurosAplicado      // 🔥 novo campo
+    jurosAplicado      //novo campo
   };
 }
