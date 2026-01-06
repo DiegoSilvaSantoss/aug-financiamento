@@ -15,6 +15,22 @@ body {
   position: relative;
   background: rgb(188, 188, 188);
 }
+body .alerta {
+  position: fixed;
+  z-index: 5;
+  top: 20px;
+  right: 20px;
+  background-color: #f44336;
+  color: white;
+  padding: 15px 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  font-family: sans-serif;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  display: none;
+  opacity: 0;
+  transform: translateY(-20px);
+}
 body .topo {
   width: 83%;
   height: 3rem;
@@ -346,11 +362,11 @@ body .main-calculadora .box-list #lista .item .btn-apagar {
   position: absolute;
   top: 6rem;
   right: 8rem;
-  width: 70px;
+  width: 60px;
   background: radial-gradient(circle, rgb(132, 0, 0) 0%, rgb(255, 0, 0) 100%);
 }
 body .main-calculadora .box-list #lista .item .btn-apagar img {
-  width: 20px;
+  width: 15px;
 }
 body .box-configuracao {
   width: 90%;

@@ -15,11 +15,47 @@ const entrada = document.getElementById('entrada');
 const arredondar = document.getElementById('arredondar');
 const resultado = document.getElementById('resultado');
 
+// ================= ALERTA ESTILIZADO =================
+
+function mostrarAlerta(msg, tipo = 'erro', tempo = 3000) {
+  let alerta = document.getElementById('alerta');
+
+  // cria a div caso não exista.
+  if (!alerta) {
+    alerta = document.createElement('div');
+    alerta.id = 'alerta';
+    alerta.className = 'alerta';
+    document.body.appendChild(alerta);
+  }
+
+  alerta.innerText = msg;
+
+  // cores por tipo.
+  if (tipo === 'erro') alerta.style.backgroundColor = '#f44336';
+  else if (tipo === 'sucesso') alerta.style.backgroundColor = '#4CAF50';
+  else alerta.style.backgroundColor = '#2196F3';
+
+  alerta.style.display = 'block';
+  alerta.style.opacity = 1;
+  alerta.style.transform = 'translateY(0)';
+
+  setTimeout(() => {
+    alerta.style.opacity = 0;
+    alerta.style.transform = 'translateY(-20px)';
+    setTimeout(() => alerta.style.display = 'none', 300);
+  }, tempo);
+}
+
 // ================= BASE =================
 
 document.getElementById('btnSalvar').addEventListener('click', () => {
+  if (!fileProdutos.files[0] || !fileGarantias.files[0]) {
+    mostrarAlerta('Você precisa selecionar os dois arquivos.', 'erro');
+    return;
+  }
+
   carregarBase(fileProdutos.files[0], fileGarantias.files[0], len => {
-    msg.innerText = `✔ Base carregada (${len} produtos)`;
+    mostrarAlerta(`✔ Base carregada (${len} produtos)`, 'sucesso');
   });
 });
 
@@ -27,19 +63,21 @@ document.getElementById('btnLimparBase').addEventListener('click', () => {
   limparBase();
   msg.innerText = '';
   limparCarrinho();
+  mostrarAlerta('Base e carrinho limpos.', 'info');
 });
 
 // ================= CARRINHO =================
 
 document.getElementById('btnLimparItens').addEventListener('click', () => {
   limparCarrinho();
+  mostrarAlerta('Carrinho limpo.', 'info');
 });
 
 // ================= CALCULAR =================
 
 document.getElementById('btnCalcular').addEventListener('click', () => {
   if (!carrinho.length) {
-    alert('Adicione produtos');
+    mostrarAlerta('Adicione produtos ao carrinho antes de calcular.', 'erro');
     return;
   }
 
@@ -62,15 +100,14 @@ document.getElementById('btnCalcular').addEventListener('click', () => {
 
   resultado.style.display = 'block';
   resultado.innerHTML = `
-    <p><strong>Total:</strong> <span>${total.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}<span></p>
-    <p><strong>Entrada:</strong> <span>${entVal.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</span></p>
-    <p><strong>Valor financiado:</strong> <span>${financiado.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</span></p>
-    <p><strong>Parcelas:</strong> <span>${qtdParcelas}x de ${valorParcela.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</span></p>
-    <p><strong>Total com juros:</strong> <span>${totalComJuros.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</span></p>
-    <p><strong>Juros aplicado:</strong> <span>${jurosAplicado.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</span></p>
+    <p><strong>Total:</strong> ${total.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</p>
+    <p><strong>Entrada:</strong> ${entVal.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</p>
+    <p><strong>Valor financiado:</strong> ${financiado.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</p>
+    <p><strong>Parcelas:</strong> ${qtdParcelas}x de ${valorParcela.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</p>
+    <p><strong>Total com juros:</strong> ${totalComJuros.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</p>
+    <p><strong>Juros aplicado:</strong> ${jurosAplicado.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</p>
   `;
 });
-
 
 // ================= BUSCA =================
 
@@ -106,6 +143,7 @@ busca.addEventListener('input', () => {
         adicionarCarrinho(p);
         busca.value = '';
         sugestoes.style.display = 'none';
+        mostrarAlerta('Produto adicionado ao carrinho.', 'sucesso');
       };
 
       sugestoesBody.appendChild(tr);
