@@ -92,7 +92,7 @@ body .fundo {
   opacity: 0;
   display: none;
   transition: 0.7s ease;
-  background: rgba(41, 41, 41, 0.941);
+  background: rgba(63, 63, 63, 0.877);
 }
 body .fundo.active-fundo {
   opacity: 1;
@@ -105,7 +105,7 @@ body .fundo-2 {
   opacity: 0;
   display: none;
   transition: 0.7s ease;
-  background: rgba(41, 41, 41, 0.941);
+  background: rgba(63, 63, 63, 0.877);
 }
 body .fundo-2.active-fundo-2 {
   opacity: 1;
