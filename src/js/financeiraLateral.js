@@ -5,6 +5,7 @@ export default function financeiraLateral() {
     const fundoAtivo = document.querySelector('.fundo-2');
     const btnFinance = document.querySelector('.box-btn');
     const btnPrev = document.querySelector('.box-btn-prev');
+    const topo2 = document.querySelector('.topo-financ');
 
     btnFinanciamento.addEventListener('click', () => {
 
@@ -12,6 +13,7 @@ export default function financeiraLateral() {
         btnFinance.classList.add('active-btn-finance');
         btnPrev.classList.add('active-prev');
         fundoAtivo.classList.add('active-fundo-2');
+        topo2.classList.add('active-financ');
 
     });
 
@@ -22,6 +24,7 @@ export default function financeiraLateral() {
         fundoAtivo.classList.remove('active-fundo-2');
         btnFinance.classList.remove('active-btn-finance');
         btnPrev.classList.remove('active-prev');
+        topo2.classList.remove('active-financ');
 
     })
 
