@@ -80,6 +80,7 @@ body .topo-financ {
 body .topo-financ .title {
   position: absolute;
   top: 0;
+  text-shadow: 3px 0px 0px #000000;
   color: #ffffff;
 }
 body .topo-financ.active-financ {
