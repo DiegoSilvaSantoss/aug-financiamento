@@ -20,13 +20,15 @@ body {
 
     .alerta {
         position: fixed;
-        z-index: 5;
-        top: 20px;
-        right: 20px;
+        z-index: 7;
+        top: 1.5rem;
+        right: 1rem;
+        font-weight: bold;
         background-color: #f44336;
         color: white;
         padding: 15px 20px;
         border-radius: 5px;
+        border: solid 1px rgb(255, 255, 255);
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
         font-family: sans-serif;
         transition: opacity 0.3s ease, transform 0.3s ease;

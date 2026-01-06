@@ -33,7 +33,7 @@ function mostrarAlerta(msg, tipo = 'erro', tempo = 3000) {
   // cores por tipo.
   if (tipo === 'erro') alerta.style.backgroundColor = '#f44336';
   else if (tipo === 'sucesso') alerta.style.backgroundColor = '#4CAF50';
-  else alerta.style.backgroundColor = '#2196F3';
+  else alerta.style.backgroundColor = '#0068bdff';
 
   alerta.style.display = 'block';
   alerta.style.opacity = 1;
