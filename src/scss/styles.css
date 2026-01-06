@@ -13,7 +13,7 @@ body {
   padding: 1rem;
   overflow: hidden;
   position: relative;
-  background: rgb(188, 188, 188);
+  background: linear-gradient(0deg, rgb(61, 61, 61) 0%, rgb(225, 225, 225) 100%);
 }
 body .alerta {
   position: fixed;
@@ -92,7 +92,7 @@ body .fundo {
   opacity: 0;
   display: none;
   transition: 0.7s ease;
-  background: rgba(63, 63, 63, 0.877);
+  background: rgba(22, 22, 22, 0.877);
 }
 body .fundo.active-fundo {
   opacity: 1;
@@ -105,7 +105,7 @@ body .fundo-2 {
   opacity: 0;
   display: none;
   transition: 0.7s ease;
-  background: rgba(63, 63, 63, 0.877);
+  background: rgba(11, 11, 11, 0.877);
 }
 body .fundo-2.active-fundo-2 {
   opacity: 1;
@@ -301,9 +301,10 @@ body .main-calculadora .box-title {
 }
 body .main-calculadora .box-title .title {
   font-size: 25px;
-  font-weight: bold;
-  color: #ffffff;
-  text-shadow: 3px 0px 0px #000000;
+  font-weight: 800;
+  color: #000000;
+  text-transform: uppercase;
+  text-shadow: 3px 0px 0px #a0a0a0;
 }
 body .main-calculadora .box-list {
   width: 100%;
@@ -523,6 +524,7 @@ body .box-btn .btn-financiamento {
   font-weight: bold;
   text-transform: uppercase;
   cursor: pointer;
+  border: solid 2px rgb(255, 255, 255);
   color: #ffffff;
   background: radial-gradient(circle, rgb(0, 147, 10) 0%, rgb(27, 255, 31) 100%);
 }
@@ -549,6 +551,7 @@ body .box-btn-prev .btn-prev {
   font-weight: bold;
   text-transform: uppercase;
   cursor: pointer;
+  border: solid 2px rgb(255, 255, 255);
   color: #ffffff;
   background: radial-gradient(circle, rgb(10, 0, 147) 0%, rgb(0, 5, 148) 100%);
 }
