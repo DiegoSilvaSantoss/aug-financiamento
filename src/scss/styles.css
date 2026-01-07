@@ -623,7 +623,7 @@ body .box-btn-prev.active-prev {
   body .topo .btn-lateral {
     position: fixed;
     right: 1.5rem;
-    z-index: 3;
+    z-index: 10;
     border-radius: 10px;
     background: rgb(218, 0, 0);
   }
@@ -641,7 +641,7 @@ body .box-btn-prev.active-prev {
   }
   body .topo-financ {
     position: absolute;
-    z-index: 7;
+    z-index: 12;
     top: 0.9rem;
     width: 83%;
     height: 3rem;
@@ -662,7 +662,7 @@ body .box-btn-prev.active-prev {
   }
   body .fundo {
     position: fixed;
-    z-index: 2;
+    z-index: 8;
     inset: 0;
     opacity: 0;
     display: none;
@@ -675,7 +675,7 @@ body .box-btn-prev.active-prev {
   }
   body .fundo-2 {
     position: fixed;
-    z-index: 4;
+    z-index: 11;
     inset: 0;
     opacity: 0;
     display: none;
@@ -697,7 +697,7 @@ body .box-btn-prev.active-prev {
     align-items: center;
     gap: 2rem;
     position: relative;
-    z-index: 3;
+    z-index: 10;
     margin-top: 1.5rem;
     transform: translateY(-1000px);
     transition: 0.5s ease;
@@ -980,7 +980,7 @@ body .box-btn-prev.active-prev {
     width: 90%;
     height: 350px;
     position: absolute;
-    z-index: 4;
+    z-index: 12;
     top: 4.5rem;
     display: flex;
     flex-direction: column;
@@ -1087,7 +1087,7 @@ body .box-btn-prev.active-prev {
   }
   body .box-configuracao .result {
     position: absolute;
-    bottom: 1rem;
+    bottom: -13rem;
     padding: 0.3rem;
     border-radius: 15px;
     border: solid 1px rgb(255, 255, 255);
@@ -1127,7 +1127,7 @@ body .box-btn-prev.active-prev {
     display: flex;
     justify-content: center;
     position: absolute;
-    z-index: 4;
+    z-index: 12;
     bottom: 4rem;
     display: none;
   }
