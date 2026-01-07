@@ -104,7 +104,7 @@ export function render() {
       render();
     };
 
-    //BOTÃO APAGAR (ADIÇÃO)
+    //BOTÃO APAGAR
     const btnApagar = document.createElement('button');
     btnApagar.textContent = 'Apagar';
     btnApagar.className = 'btn-apagar';

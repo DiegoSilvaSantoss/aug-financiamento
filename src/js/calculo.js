@@ -36,12 +36,12 @@ export function calcularTotal(entradaStr, parcelas, taxa, arredondar) {
   const jurosAplicado = totalComJuros - financiado; // 🔥 juros que está sendo aplicado
 
   return {
-    total,             // mantém o total
+    total,
     financiado,
     entrada,
     valorParcela,
     parcelas: n,
     totalComJuros,
-    jurosAplicado      // 🔥 novo campo
+    jurosAplicado 
   };
 }
