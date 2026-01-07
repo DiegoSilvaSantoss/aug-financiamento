@@ -586,7 +586,7 @@ body .box-btn-prev.active-prev {
   }
   body .alerta {
     position: fixed;
-    z-index: 7;
+    z-index: 13;
     top: 1rem;
     left: 0.4rem;
     right: 0.5rem;
