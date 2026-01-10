@@ -15,6 +15,28 @@ body {
   position: relative;
   background: linear-gradient(0deg, rgb(61, 61, 61) 0%, rgb(225, 225, 225) 100%);
 }
+body .alert-pc-review {
+  background-color: #000000;
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .alert-pc-review h1 {
+  font-size: 50px;
+  color: rgb(255, 255, 255);
+}
+body .alert-pc-review h1 span:nth-child(1) {
+  color: #cb0000;
+}
+body .alert-pc-review h1 span:nth-child(2) {
+  color: #d6c400;
+}
 body .alerta {
   position: fixed;
   z-index: 7;
@@ -573,7 +595,7 @@ body .box-btn-prev.active-prev {
   justify-content: center;
 }
 
-@media only screen and (min-width: 320px) and (max-width: 450px) {
+@media only screen and (min-width: 320px) and (max-width: 480px) {
   body {
     width: 100vw;
     height: 100vh;
@@ -583,6 +605,9 @@ body .box-btn-prev.active-prev {
     overflow: hidden;
     position: relative;
     background: linear-gradient(0deg, rgb(61, 61, 61) 0%, rgb(225, 225, 225) 100%);
+  }
+  body .alert-pc-review {
+    display: none;
   }
   body .alerta {
     position: fixed;
@@ -612,7 +637,7 @@ body .box-btn-prev.active-prev {
     position: relative;
     border-radius: 10px;
     padding: 1rem;
-    background: rgb(218, 0, 0);
+    background: radial-gradient(circle, rgb(255, 0, 0) 0%, rgb(156, 0, 0) 100%);
   }
   body .topo .title {
     text-transform: uppercase;
@@ -625,7 +650,7 @@ body .box-btn-prev.active-prev {
     right: 1.5rem;
     z-index: 10;
     border-radius: 10px;
-    background: rgb(218, 0, 0);
+    background: radial-gradient(circle, rgb(255, 0, 0) 0%, rgb(156, 0, 0) 100%);
   }
   body .topo .btn-lateral #btn-lateral {
     padding: 0.5rem;
@@ -648,7 +673,7 @@ body .box-btn-prev.active-prev {
     border-radius: 10px;
     padding: 1rem;
     display: none;
-    background: rgb(218, 0, 0);
+    background: radial-gradient(circle, rgb(255, 0, 0) 0%, rgb(156, 0, 0) 100%);
   }
   body .topo-financ .title {
     position: absolute;
@@ -1106,7 +1131,6 @@ body .box-btn-prev.active-prev {
     padding: 0.3rem;
     border-radius: 15px;
     border: solid 1px rgb(255, 255, 255);
-    background-color: #232323;
   }
   body .box-configuracao .result p span {
     color: #28b700;
@@ -1142,6 +1166,19 @@ body .box-btn-prev.active-prev {
   }
   body .box-btn.active-btn-finance {
     display: none;
+  }
+  body .box-footer {
+    position: absolute;
+    bottom: 5rem;
+    width: 100%;
+    text-align: center;
+  }
+  body .box-footer p {
+    position: relative;
+    top: 1rem;
+    font-size: 10px;
+    font-weight: 700;
+    color: rgb(255, 255, 255);
   }
   body .box-btn-prev {
     width: 40%;

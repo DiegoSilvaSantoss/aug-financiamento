@@ -18,6 +18,32 @@ body {
     position: relative;
     background: linear-gradient(0deg,rgb(61, 61, 61) 0%, rgb(225, 225, 225) 100%);
 
+    //APAGAR ISSO DEPOIS.
+    .alert-pc-review {
+        background-color: #000000;
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        h1 {
+            font-size: 50px;
+            color: rgb(255, 255, 255);
+
+            span:nth-child(1) {
+                color: #cb0000;
+            }
+            span:nth-child(2) {
+                color: #d6c400;
+            }
+        }
+    }
+
     .alerta {
         position: fixed;
         z-index: 7;
@@ -742,7 +768,7 @@ body {
 
 
 
-@media only screen and (min-width: 320px) and (max-width: 450px) {
+@media only screen and (min-width: 320px) and (max-width: 480px) {
     
     body {
     width: 100vw;
@@ -753,6 +779,10 @@ body {
     overflow: hidden;
     position: relative;
     background: linear-gradient(0deg,rgb(61, 61, 61) 0%, rgb(225, 225, 225) 100%);
+
+    .alert-pc-review {
+        display: none;
+    }
 
     .alerta {
         position: fixed;
@@ -784,7 +814,7 @@ body {
         position: relative;
         border-radius: 10px;
         padding: 1rem;
-        background: rgb(218, 0, 0);
+        background: radial-gradient(circle, rgb(255, 0, 0) 0%, rgb(156, 0, 0) 100%);
 
 
         .title {
@@ -799,7 +829,7 @@ body {
             right: 1.5rem;
             z-index: 10;
             border-radius: 10px;
-            background: rgb(218, 0, 0);
+            background: radial-gradient(circle, rgb(255, 0, 0) 0%, rgb(156, 0, 0) 100%);
 
             #btn-lateral {
                 padding: 0.5rem;
@@ -829,7 +859,7 @@ body {
         border-radius: 10px;
         padding: 1rem;
         display: none;
-        background: rgb(218, 0, 0);
+        background: radial-gradient(circle, rgb(255, 0, 0) 0%, rgb(156, 0, 0) 100%);
 
         .title {
             //border: solid 1px green;
@@ -1424,7 +1454,6 @@ body {
             padding: 0.3rem;
             border-radius: 15px;
             border: solid 1px rgb(255, 255, 255);
-            background-color: #232323;
 
             p {
 
@@ -1473,6 +1502,22 @@ body {
 
         &.active-btn-finance {
             display: none;
+        }
+    }
+
+
+    .box-footer {
+        position: absolute;
+        bottom: 5rem;
+        width: 100%;
+        text-align: center;
+
+        p {
+            position: relative;
+            top: 1rem;
+            font-size: 10px;
+            font-weight: 700;
+            color: rgb(255, 255, 255);
         }
     }
 
