@@ -44,3 +44,15 @@ p span {
         transform: translateY(-12px) scale(1.1);
     }
 }
+
+@media only screen and (min-width: 380px) and (max-width: 480px) {
+
+    h1 {
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+}
