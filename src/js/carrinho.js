@@ -108,7 +108,7 @@ export function render() {
     const btnApagar = document.createElement('button');
     btnApagar.textContent = 'Apagar';
     btnApagar.className = 'btn-apagar';
-    btnApagar.innerHTML = `<img src="./src/img/recycle-bin.png" alt="Imagem logo lixeira">`
+    btnApagar.innerHTML = `<img src="./src/img/bin.png" alt="Imagem logo lixeira">`
     btnApagar.onclick = () => {
       carrinho = carrinho.filter(item => item.nce !== p.nce);
       salvarCarrinho();

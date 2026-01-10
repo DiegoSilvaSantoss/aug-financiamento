@@ -915,7 +915,7 @@ body {
                 align-items: center;
 
                 input[type="file"]::file-selector-button {
-                    background: radial-gradient(circle, rgba(255, 110, 61, 1) 0%, rgba(255, 179, 0, 1) 100%);
+                    background: radial-gradient(circle, rgb(205, 170, 0) 0%, rgb(141, 108, 0) 100%);
                     color: rgb(255, 255, 255);
                     padding: 0.8rem 2rem;
                     border-radius: 10px;
@@ -925,7 +925,7 @@ body {
 
 
                     &:hover {
-                        background: rgb(236, 232, 0);
+                        background: rgb(201, 198, 0);
                     }
                 }
 
@@ -952,7 +952,7 @@ body {
                 align-items: center;
 
                 input[type="file"]::file-selector-button {
-                    background: radial-gradient(circle, rgb(0, 147, 10) 0%, rgb(89, 255, 92) 100%);
+                    background: radial-gradient(circle, rgb(0, 197, 13) 0%, rgb(0, 124, 2) 100%);
                     color: rgb(255, 255, 255);
                     padding: 0.8rem 2rem;
                     border-radius: 10px;
@@ -976,7 +976,7 @@ body {
 
                 img {
                     position: absolute;
-                    width: 20px;
+                    width: 25px;
                     left: 0.3rem;
                 }
             }
@@ -997,18 +997,18 @@ body {
                 color: rgb(255, 255, 255);
 
                 &:nth-child(1) {
-                    background: radial-gradient(circle, rgb(0, 178, 12) 0%, rgb(89, 255, 92) 100%);
+                    background: radial-gradient(circle, rgb(0, 193, 13) 0%, rgb(0, 129, 2) 100%);
 
                     &:hover {
-                        background: rgb(26, 193, 0);
+                        background: rgb(29, 219, 0);
                     }
                 }
 
                 &:nth-child(2) {
-                    background: radial-gradient(circle, rgb(132, 0, 0) 0%, rgba(255, 0, 0, 1) 100%);
+                    background: radial-gradient(circle, rgb(191, 0, 0) 0%, rgb(122, 0, 0) 100%);
 
                     &:hover {
-                        background: rgb(231, 0, 0);
+                        background: rgb(211, 0, 0);
                     }
                 }
             }
@@ -1066,6 +1066,11 @@ body {
                     position: absolute;
                     left: 0.3rem;
                     width: 26px;
+                    transition: 0.5s ease;
+
+                    &.active {
+                        transform: rotate(90deg) scale(1.5) translate(5px, 4px);
+                    }
                 }
             }
 
@@ -1137,15 +1142,26 @@ body {
             text-align: center;
 
             .title {
+                position: relative;
                 font-size: 20px;
                 font-weight: 800;
-                color: #000000;
+                color: #ffffff;
                 text-transform: uppercase;
-                text-shadow: 3px 0px 0px #a0a0a0;
+                text-shadow: 3px 0px 0px #000000;
+
+                &::after {
+                    position: absolute;
+                    content: '';
+                    bottom: 0;
+                    left: 13%;
+                    width: 75%;
+                    height: 2px;
+                    background-color: #222222;
+                }
             }
 
             img {
-                width: 40px;
+                width: 30px;
                 border-radius: 50%;
                 //box-shadow: 0 0 20px rgba(0, 0, 0, 0.776);
                 animation: arrowMovie 2s ease-in-out infinite;
@@ -1211,6 +1227,7 @@ body {
                         right: 1rem;
                         top: 4.4rem;
                         display: flex;
+                        font-size: 14px;
                         flex-direction: column;
                         gap: 0.5rem;
                     }
@@ -1228,23 +1245,23 @@ body {
 
                     .btn-minus {
                         right: 4rem;
-                        background: radial-gradient(circle, rgb(132, 121, 0) 0%, rgb(255, 242, 0) 100%);
+                        background: radial-gradient(circle, rgb(211, 193, 0) 0%, rgb(116, 110, 0) 100%);
                     }
 
                     .btn-plus {
                         right: 1rem;
-                        background: radial-gradient(circle, rgb(0, 132, 2) 0%, rgb(0, 255, 34) 100%);
+                        background: radial-gradient(circle, rgb(0, 211, 4) 0%, rgb(0, 114, 15) 100%);
                     }
 
                     .btn-apagar {
                         position: absolute;
-                        top: 6rem;
+                        top: 5.7rem;
                         right: 8rem;
                         width: 60px;
-                        background: radial-gradient(circle, rgb(132, 0, 0) 0%, rgba(255, 0, 0, 1) 100%);
+                        background: radial-gradient(circle, rgb(206, 0, 0) 0%, rgb(134, 0, 0) 100%);
 
                         img {
-                            width: 15px;
+                            width: 20px;
                         }
                     }
                 }
@@ -1314,18 +1331,18 @@ body {
                     color: rgb(255, 255, 255);
 
                     &:nth-child(1) {
-                        background: radial-gradient(circle, rgb(0, 178, 12) 0%, rgb(89, 255, 92) 100%);
+                        background: radial-gradient(circle, rgb(0, 188, 13) 0%, rgb(0, 104, 2) 100%);
 
                         &:hover {
-                            background: rgb(26, 193, 0);
+                            background: rgb(28, 207, 0);
                         }
                     }
 
                     &:nth-child(2) {
-                        background: radial-gradient(circle, rgb(132, 0, 0) 0%, rgba(255, 0, 0, 1) 100%);
+                        background: radial-gradient(circle, rgb(182, 0, 0) 0%, rgb(104, 0, 0) 100%);
 
                         &:hover {
-                            background: rgb(231, 0, 0);
+                            background: rgb(220, 0, 0);
                         }
                     }
                 }
@@ -1422,28 +1439,34 @@ body {
 
     .box-btn {
         //border: solid 1px red;
-        width: 90%;
+        width: 40%;
         display: flex;
         justify-content: center;
         position: absolute;
         z-index: 7;
         bottom: 5rem;
+        right: 0.5rem;
         margin: 0 auto;
 
         .btn-financiamento {
-            padding: 0.5rem 3rem;
+            display: flex;
+            align-items: center;
+            padding: 0.5rem 0.9rem;
             border-radius: 10px;
             border: none;
             font-size: 20px;
             font-weight: bold;
             text-transform: uppercase;
             cursor: pointer;
-            border: solid 2px rgb(255, 255, 255);
             color: #ffffff;
-            background: radial-gradient(circle, rgb(0, 147, 10) 0%, rgb(27, 255, 31) 100%);
+            background: radial-gradient(circle, rgb(0, 255, 17) 0%, rgb(0, 110, 2) 100%);
 
             &:hover {
                 background: rgb(0, 217, 0);
+            }
+
+            img {
+                width: 40px;
             }
         }
 
@@ -1456,28 +1479,34 @@ body {
 
     .box-btn-prev {
         //border: solid 1px red;
-        width: 90%;
+        width: 40%;
         display: flex;
         justify-content: center;
         position: absolute;
         z-index: 12;
-        bottom: 4rem;
+        bottom: 5rem;
+        right: 0.1rem;
         display: none;
 
         .btn-prev {
-            padding: 0.5rem 3rem;
+            display: flex;
+            align-items: center;
+            padding: 0.5rem 0.9rem;
             border-radius: 10px;
             border: none;
             font-size: 20px;
             font-weight: bold;
             text-transform: uppercase;
             cursor: pointer;
-            border: solid 2px rgb(255, 255, 255);
             color: #ffffff;
-            background: radial-gradient(circle, rgb(10, 0, 147) 0%, rgb(0, 5, 148) 100%);
+            background: radial-gradient(circle, rgb(203, 156, 0) 0%, rgb(148, 116, 0) 100%);
 
             &:hover {
-                background: rgb(0, 4, 216);
+                background: rgb(216, 191, 0);
+            }
+
+            img {
+                width: 40px;
             }
         }
 

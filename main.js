@@ -3,6 +3,7 @@ import { adicionarCarrinho, limparCarrinho, carrinho } from './src/js/carrinho.j
 import { calcularTotal } from './src/js/calculo.js';
 import uploadLateral from './src/js/uploadLateral.js';
 import financeiraLateral from './src/js/financeiraLateral.js';
+import { lupaMovie } from './src/js/lupaMovie.js';
 
 const fileProdutos = document.getElementById('fileProdutos');
 const fileGarantias = document.getElementById('fileGarantias');
@@ -172,3 +173,4 @@ entrada.addEventListener('input', () => {
 
 uploadLateral();
 financeiraLateral();
+lupaMovie();
