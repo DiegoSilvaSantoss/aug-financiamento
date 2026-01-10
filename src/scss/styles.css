@@ -1106,6 +1106,7 @@ body .box-btn-prev.active-prev {
     padding: 0.3rem;
     border-radius: 15px;
     border: solid 1px rgb(255, 255, 255);
+    background-color: #232323;
   }
   body .box-configuracao .result p span {
     color: #28b700;
