@@ -1,0 +1,46 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    background-color: black;
+}
+
+body img {
+    width: 80px;
+    animation: imgMovie 3s ease-in-out infinite;
+}
+
+h1,p {
+    color: rgb(255, 255, 255);
+}
+
+h1 span {
+    color: red;
+}
+
+p span {
+    font-weight: 800;
+    color: rgb(49, 209, 0);
+}
+
+@keyframes imgMovie {
+    0%,
+    100% {
+        transform: translate(0);
+    }
+
+    50% {
+        transform: translateY(-12px) scale(1.1);
+    }
+}
