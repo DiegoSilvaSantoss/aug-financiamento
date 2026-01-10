@@ -1170,7 +1170,7 @@ body .box-btn-prev.active-prev {
   body .box-footer {
     position: absolute;
     bottom: 5rem;
-    width: 100%;
+    width: 90%;
     text-align: center;
   }
   body .box-footer p {
