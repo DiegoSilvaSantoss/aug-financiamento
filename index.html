@@ -1,14 +1,160 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
+
 <head>
-  <link rel="stylesheet" href="./styles.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Em manuntenção</title>
+  <title>Calculadora Financeira AUG</title>
+  <link rel="stylesheet" href="./src/scss/styles.css">
 </head>
+
 <body>
-  <img src="./img/warning-browser.png" alt="Imagem Erro">
-  <h1>Site temporariamente fora do <span>AR</span></h1>
-  <p>Estou desenvolvendo o <span>APP</span> em breve!</p>
+
+  <div class="topo">
+    <div class="title">
+      <h1>Aug Financeira</h1>
+    </div>
+
+    <div class="btn-lateral">
+      <button id="btn-lateral">
+        <img src="./src/img/google-docs.png" alt="Imagem logo arquivo">
+      </button>
+    </div>
+  </div>
+
+  <div class="topo-financ">
+    <div class="title">
+      <h1>Simulação Crediário</h1>
+    </div>
+  </div>
+
+
+  <div class="upload-lateral">
+    <h2 class="title">⬆ Carregar Base</h2>
+
+    <div class="box-import">
+      <div class="box-input1">
+        <label>Produto</label>
+        <img src="./src/img/import.png" alt="imagem logo arquivo">
+        <input type="file" id="fileProdutos">
+      </div>
+
+      <div class="box-input2">
+        <label>Garantia</label>
+        <img src="./src/img/warranty.png" alt="imagem logo garantia">
+        <input type="file" id="fileGarantias">
+      </div>
+    </div>
+
+    <div class="flex mt-10 buttons">
+      <button id="btnSalvar">Salvar Base</button>
+      <button class="secondary" id="btnLimparBase">Limpar Base</button>
+    </div>
+
+    <p id="msg" class="msg"></p>
+
+  </div>
+
+
+  <div class="fundo"></div>
+  <div class="fundo-2"></div>
+
+
+  <div class="main-calculadora">
+
+    <div class="relative">
+      <div class="box-input">
+        <img class="img-lupa" src="./src/img/find.png" alt="Imagem logo pesquisa">
+        <input class="campo-input" placeholder="Buscar por NCE ou DESCRIÇÃO" type="text" id="busca">
+      </div>
+
+      <div id="sugestoes" class="sugestoes">
+        <table>
+          <thead>
+            <tr>
+              <th>NCE</th>
+              <th>Descrição</th>
+              <th>Preço</th>
+            </tr>
+          </thead>
+          <tbody id="sugestoesBody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="box-title">
+      <h2 class="title">Produtos Selecionados</h2>
+      <img src="./src/img/down.png" alt="Imagem logo seta pra baixo">
+    </div>
+
+    <div class="box-list">
+
+      <div id="lista"></div>
+    </div>
+  </div>
+
+
+  <div class="box-configuracao">
+    <div class="taxa-financiamento">
+        <div class="box">
+          <label>Taxa (%) por parcela</label>
+          <input type="number" id="taxa" value="11.9" step="0.01">
+        </div>
+      </div>
+
+
+    <div class="flex mt-10">
+      <div class="box">
+        <label>Parcelas</label>
+        <select id="parcelas"></select>
+      </div>
+    </div>
+
+
+    <div class="box-entrada">
+      <div class="box">
+        <label>Entrada</label>
+        <input type="text" id="entrada" value="R$ 0,00">
+      </div>
+    </div>
+
+
+    <div class="box-arrendondar">
+      <div class="round-box">
+        <input type="checkbox" id="arredondar">
+        <label for="arredondar"><strong>Arredondar valor das parcelas</strong></label>
+      </div>
+    </div>
+
+
+    <div class="flex mt-10">
+      <div class="box-btns">
+        <button id="btnCalcular">Calcular</button>
+        <button class="secondary" id="btnLimparItens">Limpar Itens</button>
+      </div>
+    </div>
+
+
+    <div id="resultado" class="result"></div>
+  </div>
+
+  <div class="box-btn">
+    <button class="btn-financiamento"><img src="./src/img/accounts.png" alt="Imagem logo financiamento"></button>
+  </div>
+
+  <div class="box-btn-prev">
+    <button class="btn-prev"><img src="./src/img/box.png" alt="Imagem logo produto"></button>
+  </div>
+
+  <div class="box-footer"><p>© 2026 DiegoDev — Todos os direitos reservados.</p></div>
+
+  <div id="alerta" class="alerta" style="display:none;"></div>
+
+
+
 </body>
+<script type="module" src="./main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="./alert.js"></script>
+
 </html>
